@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Kalkulator Sederhana</title>
+	<title>Kalkulator</title>
 </head>
 <body>
 	<form method="post">
@@ -21,16 +21,21 @@
 			$angka2 = $_POST['angka2'];
 			$operator = $_POST['operator'];
 
-			if ($operator == '+') {
-                $hasil = $angka1 + $angka2;
-            } else if ($operator == '-') {
-                $hasil = $angka1 - $angka2;
-            } else if ($operator == '*') {
-                $hasil = $angka1 * $angka2;
-            } else if ($operator == '/') {
-                $hasil = $angka1 / $angka2;
-            }
-            
+            // memilih branch branch-6701213086
+			switch($operator){
+				case "tambah":
+					$hasil = $angka1 + $angka2;
+					break;
+				case "kurang":
+					$hasil = $angka1 - $angka2;
+					break;
+				case "kali":
+					$hasil = $angka1 * $angka2;
+					break;
+				case "bagi":
+					$hasil = $angka1 / $angka2;
+					break;
+			}
 
 			echo "<br>Hasil perhitungan: ".$hasil;
 		}
