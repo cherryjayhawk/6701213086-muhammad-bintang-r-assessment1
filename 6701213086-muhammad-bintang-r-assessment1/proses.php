@@ -10,7 +10,7 @@
 		<select name="operator">
 			<option value="tambah">+</option>
 			<option value="kurang">-</option>
-			<option value="kali">x</option>
+			<option value="kali">*</option>
 			<option value="bagi">/</option>
 		</select><br>
 		<input type="submit" name="submit" value="Hitung">
@@ -21,20 +21,16 @@
 			$angka2 = $_POST['angka2'];
 			$operator = $_POST['operator'];
 
-			switch($operator){
-				case "tambah":
-					$hasil = $angka1 + $angka2;
-					break;
-				case "kurang":
-					$hasil = $angka1 - $angka2;
-					break;
-				case "kali":
-					$hasil = $angka1 * $angka2;
-					break;
-				case "bagi":
-					$hasil = $angka1 / $angka2;
-					break;
-			}
+			if ($operator == '+') {
+                $hasil = $angka1 + $angka2;
+            } else if ($operator == '-') {
+                $hasil = $angka1 - $angka2;
+            } else if ($operator == '*') {
+                $hasil = $angka1 * $angka2;
+            } else if ($operator == '/') {
+                $hasil = $angka1 / $angka2;
+            }
+            
 
 			echo "<br>Hasil perhitungan: ".$hasil;
 		}
